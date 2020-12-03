@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Nyuci Dimana</string>
+    <string name="login">Login</string>
+    <string name="edit_text_email">email@site.com</string>
+    <string name="edit_text_password">Password</string>
+    <string name="register">Register</string>
+    <string name="edit_text_nama">Nama</string>
+    <string name="edit_text_telepon">No. Telepon</string>
 </resources>

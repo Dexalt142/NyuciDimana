@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingHorizontal="32dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textFontWeight="700"
+            android:textSize="36sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:hint="@string/edit_text_nama"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <EditText
+            android:hint="@string/edit_text_email"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <EditText
+            android:hint="@string/edit_text_password"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <EditText
+            android:hint="@string/edit_text_telepon"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="phone"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <Button
+            android:background="@drawable/button_primary"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:layout_width="128dp"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:stateListAnimator="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="96dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah memiliki akun? "
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/colorBlack"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masuk Sekarang!"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
