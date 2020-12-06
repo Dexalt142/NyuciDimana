@@ -24,6 +24,7 @@
             android:layout_marginBottom="16dp"/>
 
         <EditText
+            android:id="@+id/login_email"
             android:hint="@string/edit_text_email"
             android:fontFamily="@font/poppins"
             android:paddingHorizontal="16dp"
@@ -36,6 +37,7 @@
             android:textColorHighlight="@color/colorPrimary"/>
 
         <EditText
+            android:id="@+id/login_password"
             android:hint="@string/edit_text_password"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
@@ -49,6 +51,7 @@
             android:textColorHighlight="@color/colorPrimary"/>
 
         <Button
+            android:id="@+id/login_button"
             android:background="@drawable/button_primary"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="16dp"
