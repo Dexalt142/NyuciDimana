@@ -1,6 +1,7 @@
 package com.fatur_atir_cahya.nyucidimana.api.service;
 
 import com.fatur_atir_cahya.nyucidimana.api.model.Login;
+import com.fatur_atir_cahya.nyucidimana.api.model.Register;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -16,5 +17,8 @@ public interface AuthInterface {
 
     @GET("auth/me")
     Call<JsonObject> user(@Header("Authorization") String authHeader);
+
+    @POST("auth/register")
+    Call<JsonObject> register(@Body Register register);
 
 }
