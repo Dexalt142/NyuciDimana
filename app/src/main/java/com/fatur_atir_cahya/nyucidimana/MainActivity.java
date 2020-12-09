@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent;
-                Toast.makeText(getApplicationContext(), sessionManager.getToken(), Toast.LENGTH_LONG).show();
                 if(sessionManager.hasToken()) {
                     intent = new Intent(getApplicationContext(), UserDashboardActivity.class);
                 } else {

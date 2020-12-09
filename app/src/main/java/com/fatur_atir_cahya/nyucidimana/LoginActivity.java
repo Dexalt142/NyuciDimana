@@ -2,6 +2,7 @@ package com.fatur_atir_cahya.nyucidimana;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     Button button;
     EditText emailField;
     EditText passwordField;
+
+    String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +57,39 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         int responseCode = response.code();
                         if(responseCode == 200) {
-                            String token = response.body().getAsJsonObject("data").get("token").toString();
-                            sessionManager.saveUser("email@user.com", "role", token);
+                            token = response.body().getAsJsonObject("data").get("token").getAsString();
+
+                            Call<JsonObject> callUser = authInterface.user("Bearer " + token);
+                            callUser.enqueue(new Callback<JsonObject>() {
+                                @Override
+                                public void onResponse(Call<JsonObject> call, Response<JsonObject> userResponse) {
+                                    int userResponseCode = userResponse.code();
+                                    if(userResponseCode == 200) {
+                                        JsonObject data = userResponse.body().getAsJsonObject("data");
+                                        String userName = data.get("name").getAsString();
+                                        String userEmail = data.get("email").getAsString();
+                                        String userRole = data.get("role").getAsString();
+
+                                        sessionManager.saveUser(userName, userEmail, userRole, token);
+
+                                        Intent dashboardIntent = null;
+                                        if(userRole.equals("0")) {
+                                            dashboardIntent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                                        } else if(userRole.equals("1")) {
+                                            dashboardIntent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                                        }
+
+                                        startActivity(dashboardIntent);
+                                        finish();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<JsonObject> call, Throwable t) {
+                                    Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_LONG).show();
+                                    enableForm();
+                                }
+                            });
                         } else {
                             Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_LONG).show();
                             enableForm();

@@ -9,6 +9,7 @@ public class SessionManager {
     private SharedPreferences.Editor sharedPrefEditor;
     private final String USER_SESSION = "USER_SESSION";
 
+    private final String USER_NAME = "USER_NAME";
     private final String USER_EMAIL = "USER_EMAIL";
     private final String USER_ROLE = "USER_ROLE";
     private final String USER_TOKEN = "USER_TOKEN";
@@ -22,13 +23,15 @@ public class SessionManager {
         return sharedPreferences.contains(USER_TOKEN);
     }
 
-    public void saveUser(String email, String role, String token) {
+    public void saveUser(String name, String email, String role, String token) {
+        sharedPrefEditor.putString(USER_NAME, name);
         sharedPrefEditor.putString(USER_EMAIL, email);
         sharedPrefEditor.putString(USER_ROLE, role);
         sharedPrefEditor.putString(USER_TOKEN, token);
         sharedPrefEditor.clear();
         sharedPrefEditor.commit();
     }
+
     public String getToken() {
         return sharedPreferences.getString(USER_TOKEN, null);
     }
