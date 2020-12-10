@@ -36,4 +36,16 @@ public class SessionManager {
         return sharedPreferences.getString(USER_TOKEN, null);
     }
 
+    public String getName() {
+        return sharedPreferences.getString(USER_NAME, null);
+    }
+
+    public String getEmail() {
+        return sharedPreferences.getString(USER_EMAIL, null);
+    }
+
+    public String getRole() {
+        return sharedPreferences.getString(USER_ROLE, null);
+    }
+
 }

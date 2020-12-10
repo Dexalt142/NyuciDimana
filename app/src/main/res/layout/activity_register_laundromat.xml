@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterLaundromatActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="@string/login"
+            android:text="@string/daftar_tempat_laundry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
@@ -24,8 +24,22 @@
             android:layout_marginBottom="16dp"/>
 
         <EditText
-            android:id="@+id/login_email"
-            android:hint="@string/edit_text_email"
+            android:id="@+id/laundromat_name"
+            android:hint="@string/edit_text_nama"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <EditText
+            android:id="@+id/laundromat_address"
+            android:hint="@string/edit_text_alamat"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
             android:paddingHorizontal="16dp"
             android:layout_width="match_parent"
@@ -36,22 +50,8 @@
             android:inputType="textEmailAddress"
             android:textColorHighlight="@color/colorPrimary"/>
 
-        <EditText
-            android:id="@+id/login_password"
-            android:hint="@string/edit_text_password"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/edit_text_background"
-            android:textCursorDrawable="@null"
-            android:maxLines="1"
-            android:inputType="textPassword"
-            android:textColorHighlight="@color/colorPrimary"/>
-
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/laundromat_register_button"
             android:background="@drawable/button_primary"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="16dp"
@@ -59,35 +59,9 @@
             android:layout_width="128dp"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
-            android:text="@string/login"
+            android:text="@string/simpan"
             android:stateListAnimator="@null"/>
 
-        <LinearLayout
-            android:layout_marginTop="64dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/belum_memiliki_akun"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/colorBlack"
-                android:textSize="16dp"/>
-
-            <TextView
-                android:id="@+id/to_register_button"
-                android:layout_marginLeft="4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/daftar_sekarang"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16dp"/>
-        </LinearLayout>
-
     </LinearLayout>
-
 
 </RelativeLayout>

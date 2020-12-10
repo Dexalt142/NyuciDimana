@@ -24,6 +24,7 @@
             android:layout_marginBottom="16dp"/>
 
         <EditText
+            android:id="@+id/register_name"
             android:hint="@string/edit_text_nama"
             android:fontFamily="@font/poppins"
             android:paddingHorizontal="16dp"
@@ -36,6 +37,7 @@
             android:textColorHighlight="@color/colorPrimary"/>
 
         <EditText
+            android:id="@+id/register_email"
             android:hint="@string/edit_text_email"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
@@ -45,10 +47,11 @@
             android:background="@drawable/edit_text_background"
             android:textCursorDrawable="@null"
             android:maxLines="1"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:textColorHighlight="@color/colorPrimary"/>
 
         <EditText
+            android:id="@+id/register_password"
             android:hint="@string/edit_text_password"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
@@ -62,6 +65,7 @@
             android:textColorHighlight="@color/colorPrimary"/>
 
         <EditText
+            android:id="@+id/register_phone"
             android:hint="@string/edit_text_telepon"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
@@ -74,7 +78,16 @@
             android:inputType="phone"
             android:textColorHighlight="@color/colorPrimary"/>
 
+        <CheckBox
+            android:id="@+id/register_owner"
+            android:layout_marginTop="16dp"
+            android:text="@string/register_owner"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <Button
+            android:id="@+id/register_button"
             android:background="@drawable/button_primary"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="16dp"
@@ -85,31 +98,31 @@
             android:text="@string/register"
             android:stateListAnimator="@null"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="96dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="64dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sudah memiliki akun? "
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/colorBlack"
-            android:textSize="16dp"/>
+            android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Masuk Sekarang!"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sudah_memiliki_akun"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/to_login_button"
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/masuk_sekarang"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 

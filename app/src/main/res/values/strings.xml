@@ -5,6 +5,15 @@
     <string name="edit_text_email">email@site.com</string>
     <string name="edit_text_password">Password</string>
     <string name="register">Register</string>
+    <string name="register_loading">Loading</string>
+    <string name="register_owner">Daftar sebagai pemilik laundry</string>
     <string name="edit_text_nama">Nama</string>
     <string name="edit_text_telepon">No. Telepon</string>
+    <string name="sudah_memiliki_akun">Sudah memiliki akun?</string>
+    <string name="masuk_sekarang">Masuk Sekarang!</string>
+    <string name="belum_memiliki_akun">Belum memiliki akun?</string>
+    <string name="daftar_sekarang">Daftar Sekarang!</string>
+    <string name="daftar_tempat_laundry">Daftar Tempat Laundry</string>
+    <string name="edit_text_alamat">Alamat</string>
+    <string name="simpan">Simpan</string>
 </resources>

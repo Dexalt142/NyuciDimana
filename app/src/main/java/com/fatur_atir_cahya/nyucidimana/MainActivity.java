@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.fatur_atir_cahya.nyucidimana.database.LaundromatManager;
 import com.fatur_atir_cahya.nyucidimana.database.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         SessionManager sessionManager = new SessionManager(this);
+        LaundromatManager laundromatManager = new LaundromatManager(this);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -26,7 +28,15 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 Intent intent;
                 if(sessionManager.hasToken()) {
-                    intent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                    if(sessionManager.getRole().equals("1")) {
+                        if(laundromatManager.hasLaundromat()) {
+                            intent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                        } else {
+                            intent = new Intent(getApplicationContext(), RegisterLaundromatActivity.class);
+                        }
+                    } else {
+                        intent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                    }
                 } else {
                     intent = new Intent(getApplicationContext(), LoginActivity.class);
                 }
