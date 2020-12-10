@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.fatur_atir_cahya.nyucidimana.api.ApiClient;
 import com.fatur_atir_cahya.nyucidimana.api.model.Login;
 import com.fatur_atir_cahya.nyucidimana.api.service.AuthInterface;
+import com.fatur_atir_cahya.nyucidimana.api.service.LaundromatInterface;
 import com.fatur_atir_cahya.nyucidimana.database.SessionManager;
 import com.google.gson.JsonObject;
 
@@ -82,15 +83,34 @@ public class LoginActivity extends AppCompatActivity {
 
                                         sessionManager.saveUser(userName, userEmail, userRole, token);
 
-                                        Intent dashboardIntent = null;
                                         if(userRole.equals("0")) {
-                                            dashboardIntent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                                            Toast.makeText(getApplicationContext(), "USER", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(getApplicationContext(), UserDashboardActivity.class));
+                                            finish();
                                         } else if(userRole.equals("1")) {
-                                            dashboardIntent = new Intent(getApplicationContext(), UserDashboardActivity.class);
-                                        }
+                                            LaundromatInterface laundromatInterface = ApiClient.getApiClient().create(LaundromatInterface.class);
+                                            Call<JsonObject> getLaundromat = laundromatInterface.getLaundromat("Bearer " + token);
 
-                                        startActivity(dashboardIntent);
-                                        finish();
+                                            getLaundromat.enqueue(new Callback<JsonObject>() {
+                                                @Override
+                                                public void onResponse(Call<JsonObject> call, Response<JsonObject> laundromatResponse) {
+                                                    int laundromatResponseCode = laundromatResponse.code();
+
+                                                    if(laundromatResponseCode == 200) {
+                                                        startActivity(new Intent(getApplicationContext(), UserDashboardActivity.class));
+                                                        finish();
+                                                    } else if(laundromatResponseCode == 404) {
+                                                        startActivity(new Intent(getApplicationContext(), RegisterLaundromatActivity.class));
+                                                        finish();
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                                                }
+                                            });
+                                        }
                                     }
                                 }
 

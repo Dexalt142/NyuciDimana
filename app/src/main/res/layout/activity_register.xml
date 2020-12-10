@@ -98,33 +98,31 @@
             android:text="@string/register"
             android:stateListAnimator="@null"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="96dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="64dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sudah_memiliki_akun"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/colorBlack"
-            android:textSize="16dp"/>
+            android:gravity="center">
 
-        <TextView
-            android:id="@+id/to_login_button"
-            android:layout_marginLeft="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/masuk_sekarang"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sudah_memiliki_akun"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/to_login_button"
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/masuk_sekarang"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 
