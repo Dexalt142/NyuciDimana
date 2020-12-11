@@ -30,6 +30,15 @@ public class LaundromatManager {
         sharedPrefEditor.commit();
     }
 
+    public void clearLaundromat() {
+        sharedPrefEditor.remove(ID);
+        sharedPrefEditor.remove(NAME);
+        sharedPrefEditor.remove(ADDRESS);
+        sharedPrefEditor.remove(LATITUDE);
+        sharedPrefEditor.remove(LONGITUDE);
+        sharedPrefEditor.commit();
+    }
+
     public boolean hasLaundromat() {
         return sharedPreferences.contains(ID) &&
                 sharedPreferences.contains(NAME) &&

@@ -84,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
                                         sessionManager.saveUser(userName, userEmail, userRole, token);
 
                                         if(userRole.equals("0")) {
-                                            Toast.makeText(getApplicationContext(), "USER", Toast.LENGTH_LONG).show();
                                             startActivity(new Intent(getApplicationContext(), UserDashboardActivity.class));
                                             finish();
                                         } else if(userRole.equals("1")) {

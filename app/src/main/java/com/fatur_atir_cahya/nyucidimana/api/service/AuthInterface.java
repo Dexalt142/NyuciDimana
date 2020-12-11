@@ -18,6 +18,9 @@ public interface AuthInterface {
     @GET("auth/me")
     Call<JsonObject> user(@Header("Authorization") String authHeader);
 
+    @POST("auth/logout")
+    Call<JsonObject> logout(@Header("Authorization") String authHeader);
+
     @POST("auth/register")
     Call<JsonObject> register(@Body Register register);
 

@@ -32,6 +32,14 @@ public class SessionManager {
         sharedPrefEditor.commit();
     }
 
+    public void clearUser() {
+        sharedPrefEditor.remove(USER_NAME);
+        sharedPrefEditor.remove(USER_EMAIL);
+        sharedPrefEditor.remove(USER_ROLE);
+        sharedPrefEditor.remove(USER_TOKEN);
+        sharedPrefEditor.commit();
+    }
+
     public String getToken() {
         return sharedPreferences.getString(USER_TOKEN, null);
     }
