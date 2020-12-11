@@ -46,7 +46,6 @@ public class UserMapsFragment extends Fragment {
             getCurrentLocation();
         } else {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-            Toast.makeText(getActivity(), "44 Request sent", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -95,7 +94,6 @@ public class UserMapsFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        Toast.makeText(getActivity(), String.valueOf(requestCode), Toast.LENGTH_LONG).show();
         if(requestCode == 44) {
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getCurrentLocation();

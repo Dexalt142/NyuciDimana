@@ -29,6 +29,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -50,6 +51,27 @@ public class UserDashboardActivity extends AppCompatActivity {
 
         Fragment firstFragment = new UserMapsFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.user_fragment_container, firstFragment).commit();
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.user_bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selected = null;
+                switch (item.getItemId()) {
+                    case R.id.user_home:
+                        selected = new UserMapsFragment();
+                        break;
+
+                    case R.id.user_list:
+                        selected = new UserTransactionFragment();
+                        break;
+                }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.user_fragment_container, selected).commit();
+                return true;
+            }
+        });
 
     }
 
