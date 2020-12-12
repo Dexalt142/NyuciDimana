@@ -19,7 +19,8 @@
     <string name="logout">Logout</string>
     <string name="beranda">Beranda</string>
     <string name="transaksi">Transaksi</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="laundromat_name">Laundromat name</string>
+    <string name="empty_stats">--</string>
+    <string name="pendapatan">Pendapatan</string>
+    <string name="total_transactions">Total Transaksi</string>
 </resources>
