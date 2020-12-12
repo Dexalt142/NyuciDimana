@@ -15,6 +15,7 @@ import com.fatur_atir_cahya.nyucidimana.api.ApiClient;
 import com.fatur_atir_cahya.nyucidimana.api.model.Login;
 import com.fatur_atir_cahya.nyucidimana.api.service.AuthInterface;
 import com.fatur_atir_cahya.nyucidimana.api.service.LaundromatInterface;
+import com.fatur_atir_cahya.nyucidimana.database.LaundromatManager;
 import com.fatur_atir_cahya.nyucidimana.database.SessionManager;
 import com.google.gson.JsonObject;
 
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
         AuthInterface authInterface = ApiClient.getApiClient().create(AuthInterface.class);
         SessionManager sessionManager = new SessionManager(this);
+        LaundromatManager laundromatManager = new LaundromatManager(this);
 
         button = findViewById(R.id.login_button);
         emailField = findViewById(R.id.login_email);
@@ -96,7 +98,16 @@ public class LoginActivity extends AppCompatActivity {
                                                     int laundromatResponseCode = laundromatResponse.code();
 
                                                     if(laundromatResponseCode == 200) {
-                                                        startActivity(new Intent(getApplicationContext(), UserDashboardActivity.class));
+                                                        JsonObject laundromat = laundromatResponse.body().getAsJsonObject("data");
+                                                        String laundromatId = laundromat.get("id").getAsString();
+                                                        String laundromatName = laundromat.get("name").getAsString();
+                                                        String laundromatAddress = laundromat.get("address").getAsString();
+                                                        String laundromatLatitude = laundromat.get("latitude").getAsString();
+                                                        String laundromatLongitude = laundromat.get("longitude").getAsString();
+
+                                                        laundromatManager.saveLaundromat(laundromatId, laundromatName, laundromatAddress, laundromatLatitude, laundromatLongitude);
+
+                                                        startActivity(new Intent(getApplicationContext(), OwnerDashboardActivity.class));
                                                         finish();
                                                     } else if(laundromatResponseCode == 404) {
                                                         startActivity(new Intent(getApplicationContext(), RegisterLaundromatActivity.class));

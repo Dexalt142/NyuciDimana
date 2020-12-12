@@ -72,7 +72,7 @@ public class RegisterLaundromatActivity extends AppCompatActivity {
 
                                         laundromatManager.saveLaundromat(laundromatId, laundromatName, laundromatAddress, laundromatLatitude, laundromatLongitude);
 
-                                        startActivity(new Intent(getApplicationContext(), UserDashboardActivity.class));
+                                        startActivity(new Intent(getApplicationContext(), OwnerDashboardActivity.class));
                                         finish();
                                     }
                                 }

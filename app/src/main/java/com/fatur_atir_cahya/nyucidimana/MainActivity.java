@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 if(sessionManager.hasToken()) {
                     if(sessionManager.getRole().equals("1")) {
                         if(laundromatManager.hasLaundromat()) {
-                            intent = new Intent(getApplicationContext(), UserDashboardActivity.class);
+                            intent = new Intent(getApplicationContext(), OwnerDashboardActivity.class);
                         } else {
                             intent = new Intent(getApplicationContext(), RegisterLaundromatActivity.class);
                         }
