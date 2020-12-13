@@ -16,4 +16,7 @@ public interface LaundromatInterface {
 
     @POST("laundromat/create")
     Call<JsonObject> createLaundromat(@Header("Authorization") String authHeader, @Body Laundromat laundromat);
+
+    @GET("laundromat/statistic")
+    Call<JsonObject> getStatistics(@Header("Authorization") String authHeader);
 }

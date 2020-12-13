@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UserTransactionFragment">
+    tools:context=".OwnerTransactionFragment">
 
     <TextView
         android:text="@string/daftar_transaksi"
@@ -17,7 +17,7 @@
         android:layout_margin="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/user_transaction_rv"
+        android:id="@+id/owner_transaction_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/transaction_item"/>

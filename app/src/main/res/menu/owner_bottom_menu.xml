@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/owner_home"
+        android:title="@string/beranda"
+        android:icon="@drawable/icon_home"/>
+
+    <item
+        android:id="@+id/owner_list"
+        android:title="@string/transaksi"
+        android:icon="@drawable/icon_list"/>
+
+</menu>

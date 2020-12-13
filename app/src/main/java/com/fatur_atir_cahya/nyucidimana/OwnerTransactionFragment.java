@@ -26,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserTransactionFragment extends Fragment {
+public class OwnerTransactionFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<Transaction> transactionList = new ArrayList<>();
@@ -41,7 +41,7 @@ public class UserTransactionFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_user_transaction, container, false);
+        return inflater.inflate(R.layout.fragment_owner_transaction, container, false);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class UserTransactionFragment extends Fragment {
         sessionManager = new SessionManager(getActivity());
         transactionInterface = ApiClient.getApiClient().create(TransactionInterface.class);
 
-        recyclerView = view.findViewById(R.id.user_transaction_rv);
+        recyclerView = view.findViewById(R.id.owner_transaction_rv);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -59,7 +59,7 @@ public class UserTransactionFragment extends Fragment {
     }
 
     private void getTransactions() {
-        Call<JsonObject> callTransaction = transactionInterface.getUserTransaction("Bearer " + sessionManager.getToken());
+        Call<JsonObject> callTransaction = transactionInterface.getTransaction("Bearer " + sessionManager.getToken());
 
         callTransaction.enqueue(new Callback<JsonObject>() {
             @Override
