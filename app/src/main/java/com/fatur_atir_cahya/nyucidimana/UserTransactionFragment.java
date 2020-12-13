@@ -59,7 +59,7 @@ public class UserTransactionFragment extends Fragment {
     }
 
     private void getTransactions() {
-        Call<JsonObject> callTransaction = transactionInterface.getUserTransaction("Bearer " + sessionManager.getToken());
+        Call<JsonObject> callTransaction = transactionInterface.getUserTransactions("Bearer " + sessionManager.getToken());
 
         callTransaction.enqueue(new Callback<JsonObject>() {
             @Override

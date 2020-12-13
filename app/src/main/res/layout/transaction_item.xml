@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/list_background">
 
     <TextView
         android:id="@+id/transaction_code"
@@ -47,7 +50,6 @@
         android:fontFamily="@font/poppins"
         android:textFontWeight="600"
         android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@android:color/black"/>
 
 </LinearLayout>

@@ -1,21 +1,22 @@
 package com.fatur_atir_cahya.nyucidimana.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fatur_atir_cahya.nyucidimana.OwnerDashboardActivity;
+import com.fatur_atir_cahya.nyucidimana.OwnerTransactionDetailActivity;
 import com.fatur_atir_cahya.nyucidimana.R;
+import com.fatur_atir_cahya.nyucidimana.UserDashboardActivity;
+import com.fatur_atir_cahya.nyucidimana.UserTransactionDetailActivity;
 import com.fatur_atir_cahya.nyucidimana.api.model.Transaction;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.ListViewHolder> {
 
@@ -40,6 +41,20 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.startDate.setText(transaction.getStartDate());
         holder.price.setText(String.valueOf(transaction.getPrice()));
         holder.weight.setText(String.valueOf(transaction.getWeight()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String className = view.getContext().getClass().getSimpleName();
+                if(className.equals(OwnerDashboardActivity.class.getSimpleName())) {
+                    Intent detailIntent = new Intent(view.getContext(), OwnerTransactionDetailActivity.class);
+                    detailIntent.putExtra("transaction", transaction);
+                    view.getContext().startActivity(detailIntent);
+                } else if(className.equals(UserDashboardActivity.class.getSimpleName())) {
+                    view.getContext().startActivity(new Intent(view.getContext(), UserTransactionDetailActivity.class));
+                }
+            }
+        });
     }
 
     @Override
@@ -49,7 +64,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
 
-        TextView code, startDate, endDate, price, weight;
+        TextView code, startDate, price, weight;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);

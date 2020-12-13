@@ -1,8 +1,11 @@
 package com.fatur_atir_cahya.nyucidimana.api.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.JsonObject;
 
-public class Transaction {
+public class Transaction implements Parcelable {
 
     private String id;
     private String transactionCode;
@@ -28,6 +31,48 @@ public class Transaction {
         this.status = status;
         this.laundromatId = laundromatId;
         this.userId = userId;
+    }
+
+    protected Transaction(Parcel parcel) {
+        this.id = parcel.readString();
+        this.transactionCode = parcel.readString();
+        this.weight = parcel.readInt();
+        this.price = parcel.readInt();
+        this.startDate = parcel.readString();
+        this.endDate = parcel.readString();
+        this.status = parcel.readString();
+        this.laundromatId = parcel.readString();
+        this.userId = parcel.readString();
+    }
+
+    public static final Creator<Transaction> CREATOR = new Creator<Transaction>() {
+        @Override
+        public Transaction createFromParcel(Parcel in) {
+            return new Transaction(in);
+        }
+
+        @Override
+        public Transaction[] newArray(int size) {
+            return new Transaction[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(id);
+        parcel.writeString(transactionCode);
+        parcel.writeInt(weight);
+        parcel.writeInt(price);
+        parcel.writeString(startDate);
+        parcel.writeString(endDate);
+        parcel.writeString(status);
+        parcel.writeString(laundromatId);
+        parcel.writeString(userId);
     }
     
     public void loadFromJson(JsonObject jsonObject) {

@@ -59,7 +59,7 @@ public class OwnerTransactionFragment extends Fragment {
     }
 
     private void getTransactions() {
-        Call<JsonObject> callTransaction = transactionInterface.getTransaction("Bearer " + sessionManager.getToken());
+        Call<JsonObject> callTransaction = transactionInterface.getTransactions("Bearer " + sessionManager.getToken());
 
         callTransaction.enqueue(new Callback<JsonObject>() {
             @Override
