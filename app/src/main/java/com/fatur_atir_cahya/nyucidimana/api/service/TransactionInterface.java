@@ -11,4 +11,6 @@ public interface TransactionInterface {
     @GET("transaction")
     Call<JsonObject> getTransaction(@Header("Authorization") String authHeader);
 
+    @GET("transaction/user")
+    Call<JsonObject> getUserTransaction(@Header("Authorization") String authHeader);
 }

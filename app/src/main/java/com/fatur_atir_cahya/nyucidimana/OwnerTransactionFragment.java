@@ -8,11 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.fatur_atir_cahya.nyucidimana.adapter.TransactionAdapter;
 import com.fatur_atir_cahya.nyucidimana.api.ApiClient;
@@ -20,7 +18,6 @@ import com.fatur_atir_cahya.nyucidimana.api.model.Transaction;
 import com.fatur_atir_cahya.nyucidimana.api.service.TransactionInterface;
 import com.fatur_atir_cahya.nyucidimana.database.SessionManager;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
