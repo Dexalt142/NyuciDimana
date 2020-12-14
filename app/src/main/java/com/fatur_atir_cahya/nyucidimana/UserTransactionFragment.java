@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.fatur_atir_cahya.nyucidimana.adapter.TransactionAdapter;
 import com.fatur_atir_cahya.nyucidimana.api.ApiClient;
@@ -80,7 +81,14 @@ public class UserTransactionFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getTransactions();
+    }
+
     private void getTransactionFromJsonArray(JsonArray transactionArray) {
+        transactionList.clear();
         for(int i = 0; i < transactionArray.size(); i++) {
             JsonObject el = transactionArray.get(i).getAsJsonObject();
             Transaction transaction = new Transaction(el);

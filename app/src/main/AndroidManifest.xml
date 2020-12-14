@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OwnerCreateTransactionActivity"></activity>
+        <activity android:name=".CaptureQrActivity"></activity>
+        <activity android:name=".OwnerCreateTransactionActivity" />
         <activity android:name=".UserTransactionDetailActivity" />
         <activity android:name=".OwnerTransactionDetailActivity" />
         <activity android:name=".OwnerDashboardActivity" />
@@ -30,9 +31,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${GOOGLE_MAPS_API_KEY}" />
     </application>
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

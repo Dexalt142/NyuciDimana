@@ -1,5 +1,6 @@
 package com.fatur_atir_cahya.nyucidimana.api.service;
 
+import com.fatur_atir_cahya.nyucidimana.api.model.AttachTransaction;
 import com.fatur_atir_cahya.nyucidimana.api.model.CreateTransaction;
 import com.fatur_atir_cahya.nyucidimana.api.model.UpdateTransaction;
 import com.google.gson.JsonObject;
@@ -27,5 +28,8 @@ public interface TransactionInterface {
 
     @POST("transaction/update")
     Call<JsonObject> updateTransaction(@Header("Authorization") String authHeader, @Body UpdateTransaction updateTransaction);
+
+    @POST("transaction/user/attach")
+    Call<JsonObject> attachTransaction(@Header("Authorization") String authHeader, @Body AttachTransaction attachTransaction);
 
 }

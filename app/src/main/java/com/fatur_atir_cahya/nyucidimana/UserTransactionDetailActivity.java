@@ -42,8 +42,8 @@ public class UserTransactionDetailActivity extends AppCompatActivity {
         code.setText(transaction.getTransactionCode());
         startDate.setText(transaction.getStartDate());
         endDate.setText(transaction.getEndDate() != null ? transaction.getEndDate() : "-");
-        price.setText(String.valueOf(transaction.getPrice()));
-        weight.setText(transaction.getWeight() + " Kg");
+        price.setText(transaction.getPrice());
+        weight.setText(transaction.getWeight());
 
         String tStatus = transaction.getStatus();
         if(tStatus.equals("0")) {

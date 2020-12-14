@@ -36,4 +36,5 @@
     <string name="proses">Proses</string>
     <string name="selesai">Selesai</string>
     <string name="pilih_lokasi">Pilih Lokasi</string>
+    <string name="scan_transaksi">Scan Transaksi</string>
 </resources>

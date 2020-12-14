@@ -74,7 +74,7 @@ public class OwnerTransactionDetailActivity extends AppCompatActivity {
         price.setText(transaction.getPrice());
         weight.setText(transaction.getWeight());
 
-        String qrContent = transaction.getId() + "|" + transaction.getTransactionCode();
+        String qrContent = transaction.getId() + "_" + transaction.getTransactionCode();
         String qrBase64 = Base64.encodeToString(qrContent.getBytes(), Base64.DEFAULT);
         qrCode.setImageBitmap(generateQrCode(qrBase64));
 
