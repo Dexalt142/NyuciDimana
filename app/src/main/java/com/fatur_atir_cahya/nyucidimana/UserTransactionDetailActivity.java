@@ -8,9 +8,22 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.fatur_atir_cahya.nyucidimana.api.ApiClient;
+import com.fatur_atir_cahya.nyucidimana.api.model.Laundromat;
 import com.fatur_atir_cahya.nyucidimana.api.model.Transaction;
 import com.fatur_atir_cahya.nyucidimana.api.service.LaundromatInterface;
 import com.fatur_atir_cahya.nyucidimana.database.SessionManager;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UserTransactionDetailActivity extends AppCompatActivity {
 
@@ -19,6 +32,8 @@ public class UserTransactionDetailActivity extends AppCompatActivity {
 
     Transaction transaction;
     TextView code, startDate, endDate, price, weight, status;
+
+    SupportMapFragment mapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +51,8 @@ public class UserTransactionDetailActivity extends AppCompatActivity {
         price = findViewById(R.id.user_detail_price);
         weight = findViewById(R.id.user_detail_weight);
         status = findViewById(R.id.user_detail_status);
+
+        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.transaction_map);
 
         transaction = getIntent().getParcelableExtra("transaction");
 
@@ -59,6 +76,31 @@ public class UserTransactionDetailActivity extends AppCompatActivity {
             status.setBackground(getResources().getDrawable(R.drawable.status_done));
             status.setTextColor(getResources().getColor(R.color.colorWhite));
         }
+
+        Call<JsonObject> callLaundromat = laundromatInterface.getLaundromatById("Bearer " + sessionManager.getToken(), transaction.getLaundromatId());
+        callLaundromat.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                if(response.code() == 200) {
+                    JsonObject laundromatObject = response.body().getAsJsonObject("data");
+                    Laundromat laundromat = new Laundromat(laundromatObject);
+                    mapFragment.getMapAsync(new OnMapReadyCallback() {
+                        @Override
+                        public void onMapReady(GoogleMap googleMap) {
+                            LatLng latLng = new LatLng(Double.valueOf(laundromat.getLatitude()), Double.valueOf(laundromat.getLongitude()));
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
+                            MarkerOptions options = new MarkerOptions().position(latLng).title(laundromat.getName()).snippet(laundromat.getAddress());
+                            googleMap.addMarker(options);
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+            }
+        });
     }
 
     @Override

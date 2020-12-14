@@ -37,4 +37,7 @@
     <string name="selesai">Selesai</string>
     <string name="pilih_lokasi">Pilih Lokasi</string>
     <string name="scan_transaksi">Scan Transaksi</string>
+    <string name="total_transaction_pending">Transaksi Pending</string>
+    <string name="total_transaction_progress">Transaksi Diproses</string>
+    <string name="total_transaction_done">Transaksi Selesai</string>
 </resources>

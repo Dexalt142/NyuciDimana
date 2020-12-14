@@ -15,6 +15,9 @@ public interface LaundromatInterface {
     @GET("laundromat/my")
     Call<JsonObject> getLaundromat(@Header("Authorization") String authHeader);
 
+    @GET("laundromat/{id}")
+    Call<JsonObject> getLaundromatById(@Header("Authorization") String authHeader, @Path("id") String id);
+
     @GET("laundromat/nearby/{latitude}/{longitude}")
     Call<JsonObject> getNearbyLaundromat(@Header("Authorization") String authHeader, @Path("latitude") String latitude, @Path("longitude") String longitude);
 
