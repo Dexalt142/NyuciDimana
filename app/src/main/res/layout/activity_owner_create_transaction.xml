@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OwnerCreateTransactionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingHorizontal="32dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/buat_transaksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textFontWeight="700"
+            android:textSize="36sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/create_transaction_weight"
+            android:hint="@string/berat"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="number"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <EditText
+            android:id="@+id/create_transaction_price"
+            android:hint="@string/harga"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_background"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="number"
+            android:textColorHighlight="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/create_transaction_button"
+            android:background="@drawable/button_primary"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:text="@string/buat_transaksi"
+            android:stateListAnimator="@null"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

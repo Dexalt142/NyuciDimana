@@ -31,4 +31,8 @@
     <string name="berat">Berat</string>
     <string name="nama_pelanggan">Nama pelanggan</string>
     <string name="telp_pelanggan">No. telp</string>
+    <string name="buat_transaksi">Buat transaksi</string>
+    <string name="status">Status</string>
+    <string name="proses">Proses</string>
+    <string name="selesai">Selesai</string>
 </resources>

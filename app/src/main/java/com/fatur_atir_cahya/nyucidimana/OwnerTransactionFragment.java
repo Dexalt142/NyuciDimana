@@ -1,5 +1,6 @@
 package com.fatur_atir_cahya.nyucidimana;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.fatur_atir_cahya.nyucidimana.adapter.TransactionAdapter;
 import com.fatur_atir_cahya.nyucidimana.api.ApiClient;
@@ -29,6 +32,7 @@ import retrofit2.Response;
 public class OwnerTransactionFragment extends Fragment {
 
     RecyclerView recyclerView;
+    Button createTransaction;
     ArrayList<Transaction> transactionList = new ArrayList<>();
     TransactionAdapter transactionAdapter;
     SessionManager sessionManager;
@@ -52,8 +56,17 @@ public class OwnerTransactionFragment extends Fragment {
         transactionInterface = ApiClient.getApiClient().create(TransactionInterface.class);
 
         recyclerView = view.findViewById(R.id.owner_transaction_rv);
+        createTransaction = view.findViewById(R.id.create_transaction);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        createTransaction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), OwnerCreateTransactionActivity.class));
+            }
+        });
 
         getTransactions();
     }
@@ -80,11 +93,17 @@ public class OwnerTransactionFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getTransactions();
+    }
+
     private void getTransactionFromJsonArray(JsonArray transactionArray) {
+        transactionList.clear();
         for(int i = 0; i < transactionArray.size(); i++) {
             JsonObject el = transactionArray.get(i).getAsJsonObject();
-            Transaction transaction = new Transaction();
-            transaction.loadFromJson(el);
+            Transaction transaction = new Transaction(el);
             transactionList.add(transaction);
         }
     }

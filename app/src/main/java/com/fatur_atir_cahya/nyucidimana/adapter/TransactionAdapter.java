@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fatur_atir_cahya.nyucidimana.OwnerDashboardActivity;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.ListViewHolder> {
 
     ArrayList<Transaction> transactions;
+    View viewInstance;
 
     public TransactionAdapter(ArrayList<Transaction> transactions) {
         this.transactions = transactions;
@@ -30,6 +32,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.transaction_item, viewGroup, false);
+        viewInstance = view;
         return new ListViewHolder(view);
     }
 
@@ -39,8 +42,22 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         holder.code.setText(transaction.getTransactionCode());
         holder.startDate.setText(transaction.getStartDate());
-        holder.price.setText(String.valueOf(transaction.getPrice()));
-        holder.weight.setText(String.valueOf(transaction.getWeight()));
+        holder.priceWeight.setText(transaction.getPrice() + " - " + transaction.getWeight());
+
+        String status = transaction.getStatus();
+        if(status.equals("0")) {
+            holder.status.setText("Pending");
+            holder.status.setBackground(holder.itemView.getResources().getDrawable(R.drawable.status_pending));
+            holder.status.setTextColor(holder.itemView.getResources().getColor(R.color.colorWhite));
+        } else if(status.equals("1")) {
+            holder.status.setText("Diproses");
+            holder.status.setBackground(holder.itemView.getResources().getDrawable(R.drawable.status_progress));
+            holder.status.setTextColor(holder.itemView.getResources().getColor(R.color.colorWhite));
+        } else if(status.equals("2")) {
+            holder.status.setText("Selesai");
+            holder.status.setBackground(holder.itemView.getResources().getDrawable(R.drawable.status_done));
+            holder.status.setTextColor(holder.itemView.getResources().getColor(R.color.colorWhite));
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +68,9 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
                     detailIntent.putExtra("transaction", transaction);
                     view.getContext().startActivity(detailIntent);
                 } else if(className.equals(UserDashboardActivity.class.getSimpleName())) {
-                    view.getContext().startActivity(new Intent(view.getContext(), UserTransactionDetailActivity.class));
+                    Intent detailIntent = new Intent(view.getContext(), UserTransactionDetailActivity.class);
+                    detailIntent.putExtra("transaction", transaction);
+                    view.getContext().startActivity(detailIntent);
                 }
             }
         });
@@ -64,14 +83,14 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
 
-        TextView code, startDate, price, weight;
+        TextView code, startDate, priceWeight, status;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             code = itemView.findViewById(R.id.transaction_code);
             startDate = itemView.findViewById(R.id.transaction_start_date);
-            price = itemView.findViewById(R.id.transaction_price);
-            weight = itemView.findViewById(R.id.transaction_weight);
+            priceWeight = itemView.findViewById(R.id.transaction_price_weight);
+            status = itemView.findViewById(R.id.transaction_status);
         }
     }
 

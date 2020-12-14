@@ -83,8 +83,7 @@ public class UserTransactionFragment extends Fragment {
     private void getTransactionFromJsonArray(JsonArray transactionArray) {
         for(int i = 0; i < transactionArray.size(); i++) {
             JsonObject el = transactionArray.get(i).getAsJsonObject();
-            Transaction transaction = new Transaction();
-            transaction.loadFromJson(el);
+            Transaction transaction = new Transaction(el);
             transactionList.add(transaction);
         }
     }

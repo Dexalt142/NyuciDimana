@@ -8,4 +8,8 @@
     <color name="colorGray">#888</color>
     <color name="colorBlack">#000</color>
     <color name="colorEditText">#14000000</color>
+
+    <color name="colorRed">#FA4332</color>
+    <color name="colorGreen">#0EAD0E</color>
+
 </resources>

@@ -9,8 +9,8 @@ public class Transaction implements Parcelable {
 
     private String id;
     private String transactionCode;
-    private int weight;
-    private int price;
+    private String weight;
+    private String price;
     private String startDate;
     private String endDate;
     private String status;
@@ -21,7 +21,7 @@ public class Transaction implements Parcelable {
         
     }
 
-    public Transaction(String id, String transactionCode, int weight, int price, String startDate, String endDate, String status, String laundromatId, String userId) {
+    public Transaction(String id, String transactionCode, String weight, String price, String startDate, String endDate, String status, String laundromatId, String userId) {
         this.id = id;
         this.transactionCode = transactionCode;
         this.weight = weight;
@@ -36,8 +36,8 @@ public class Transaction implements Parcelable {
     protected Transaction(Parcel parcel) {
         this.id = parcel.readString();
         this.transactionCode = parcel.readString();
-        this.weight = parcel.readInt();
-        this.price = parcel.readInt();
+        this.weight = parcel.readString();
+        this.price = parcel.readString();
         this.startDate = parcel.readString();
         this.endDate = parcel.readString();
         this.status = parcel.readString();
@@ -66,8 +66,8 @@ public class Transaction implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(id);
         parcel.writeString(transactionCode);
-        parcel.writeInt(weight);
-        parcel.writeInt(price);
+        parcel.writeString(weight);
+        parcel.writeString(price);
         parcel.writeString(startDate);
         parcel.writeString(endDate);
         parcel.writeString(status);
@@ -75,13 +75,13 @@ public class Transaction implements Parcelable {
         parcel.writeString(userId);
     }
     
-    public void loadFromJson(JsonObject jsonObject) {
+    public Transaction(JsonObject jsonObject) {
         this.id = jsonObject.get("id").getAsString();
         this.transactionCode = jsonObject.get("transaction_code").getAsString();
-        this.weight = jsonObject.get("weight").getAsInt();
-        this.price = jsonObject.get("price").getAsInt();
-        this.startDate = jsonObject.get("start_date").getAsString();
-        this.endDate = jsonObject.get("end_date").isJsonNull() ? null : jsonObject.get("end_date").getAsString();
+        this.weight = jsonObject.get("weight").getAsString();
+        this.price = jsonObject.get("price").getAsString();
+        this.startDate = jsonObject.get("start_date_format").getAsString();
+        this.endDate = jsonObject.get("end_date_format").getAsString();
         this.status = jsonObject.get("status").getAsString();
         this.laundromatId = jsonObject.get("laundromat_id").getAsString();
         this.userId = jsonObject.get("user_id").isJsonNull() ? null : jsonObject.get("user_id").getAsString();
@@ -95,11 +95,11 @@ public class Transaction implements Parcelable {
         return transactionCode;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 

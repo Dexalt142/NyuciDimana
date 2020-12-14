@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UserTransactionDetailActivity"></activity>
+        <activity android:name=".OwnerCreateTransactionActivity"></activity>
+        <activity android:name=".UserTransactionDetailActivity" />
         <activity android:name=".OwnerTransactionDetailActivity" />
         <activity android:name=".OwnerDashboardActivity" />
         <activity android:name=".RegisterLaundromatActivity" />
@@ -29,9 +30,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${GOOGLE_MAPS_API_KEY}" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

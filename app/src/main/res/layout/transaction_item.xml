@@ -21,6 +21,18 @@
         android:layout_marginBottom="4dp"/>
 
     <TextView
+        android:id="@+id/transaction_status"
+        android:text="@string/status"
+        android:paddingHorizontal="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textFontWeight="600"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
         android:id="@+id/transaction_start_date"
         android:text="@string/tanggal_masuk"
         android:layout_width="match_parent"
@@ -32,7 +44,7 @@
         android:layout_marginBottom="4dp"/>
 
     <TextView
-        android:id="@+id/transaction_price"
+        android:id="@+id/transaction_price_weight"
         android:text="@string/harga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,15 +53,5 @@
         android:textSize="16sp"
         android:textColor="@android:color/black"
         android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/transaction_weight"
-        android:text="@string/berat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:textFontWeight="600"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"/>
 
 </LinearLayout>
