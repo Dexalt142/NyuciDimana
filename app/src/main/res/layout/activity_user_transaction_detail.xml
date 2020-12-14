@@ -62,7 +62,7 @@
                     android:layout_marginBottom="4dp"/>
 
                 <TextView
-                    android:text="@string/tanggal_masuk"
+                    android:text="@string/tanggal_mulai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -72,7 +72,7 @@
 
                 <TextView
                     android:id="@+id/user_detail_start_date"
-                    android:text="@string/tanggal_masuk"
+                    android:text="@string/tanggal_mulai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -82,7 +82,7 @@
                     android:layout_marginBottom="4dp"/>
 
                 <TextView
-                    android:text="@string/tanggal_keluar"
+                    android:text="@string/tanggal_selesai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -92,7 +92,7 @@
 
                 <TextView
                     android:id="@+id/user_detail_end_date"
-                    android:text="@string/tanggal_keluar"
+                    android:text="@string/tanggal_selesai"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"

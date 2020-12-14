@@ -51,6 +51,18 @@
             android:textColorHighlight="@color/colorPrimary"/>
 
         <Button
+            android:id="@+id/laundromat_pick_location"
+            android:background="@drawable/button_success"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:layout_width="match_parent"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:text="@string/pilih_lokasi"
+            android:stateListAnimator="@null"/>
+
+        <Button
             android:id="@+id/laundromat_register_button"
             android:background="@drawable/button_primary"
             android:textColor="@color/colorWhite"

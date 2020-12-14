@@ -25,8 +25,8 @@
     <string name="total_transactions">Total Transaksi</string>
     <string name="daftar_transaksi">Daftar Transaksi</string>
     <string name="transaction_code">Kode transaksi</string>
-    <string name="tanggal_masuk">Tanggal masuk</string>
-    <string name="tanggal_keluar">Tanggal keluar</string>
+    <string name="tanggal_mulai">Tanggal mulai</string>
+    <string name="tanggal_selesai">Tanggal selesai</string>
     <string name="harga">Harga</string>
     <string name="berat">Berat</string>
     <string name="nama_pelanggan">Nama pelanggan</string>
@@ -35,4 +35,5 @@
     <string name="status">Status</string>
     <string name="proses">Proses</string>
     <string name="selesai">Selesai</string>
+    <string name="pilih_lokasi">Pilih Lokasi</string>
 </resources>

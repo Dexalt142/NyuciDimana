@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/transaction_start_date"
-        android:text="@string/tanggal_masuk"
+        android:text="@string/tanggal_mulai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
