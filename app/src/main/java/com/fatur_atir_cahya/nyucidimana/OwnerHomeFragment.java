@@ -26,7 +26,7 @@ public class OwnerHomeFragment extends Fragment {
     SessionManager sessionManager;
     LaundromatManager laundromatManager;
     LaundromatInterface laundromatInterface;
-    TextView laundromatName, revenue, totalTransactions;
+    TextView laundromatName, revenue, totalTransactions, tPending, tProg, tDone;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,9 @@ public class OwnerHomeFragment extends Fragment {
         laundromatName = view.findViewById(R.id.home_laundromat_name);
         revenue = view.findViewById(R.id.home_revenue);
         totalTransactions = view.findViewById(R.id.home_total_transactions);
+        tPending = view.findViewById(R.id.home_total_transaction_pending);
+        tProg = view.findViewById(R.id.home_total_transaction_progress);
+        tDone = view.findViewById(R.id.home_total_transaction_done);
 
         laundromatName.setText(laundromatManager.getName());
         updateStatistics();
@@ -62,11 +65,17 @@ public class OwnerHomeFragment extends Fragment {
                 if(response.code() == 200) {
                     JsonObject laundromat = response.body().getAsJsonObject("data");
 
-                    String transactionsStats = laundromat.get("total_transactions").getAsString();
                     String revenueStats = laundromat.get("revenue").getAsString();
+                    String transactionsStats = laundromat.get("total_transactions").getAsString();
+                    String transactionPending = laundromat.get("transaction_pending").getAsString();
+                    String transactionProgress = laundromat.get("transaction_progress").getAsString();
+                    String transactionDone = laundromat.get("transaction_done").getAsString();
 
                     revenue.setText(revenueStats);
                     totalTransactions.setText(transactionsStats);
+                    tPending.setText(transactionPending);
+                    tProg.setText(transactionProgress);
+                    tDone.setText(transactionDone);
                 }
             }
 

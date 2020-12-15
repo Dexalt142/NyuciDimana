@@ -10,10 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OwnerDashboardActivity"></activity>
-
+        <activity android:name=".CaptureQrActivity"></activity>
+        <activity android:name=".OwnerCreateTransactionActivity" />
+        <activity android:name=".UserTransactionDetailActivity" />
+        <activity android:name=".OwnerTransactionDetailActivity" />
+        <activity android:name=".OwnerDashboardActivity" />
         <activity android:name=".RegisterLaundromatActivity" />
-
         <activity android:name=".UserDashboardActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
@@ -24,13 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${GOOGLE_MAPS_API_KEY}" />
     </application>
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

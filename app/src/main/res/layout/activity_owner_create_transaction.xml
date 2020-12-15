@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterLaundromatActivity">
+    tools:context=".OwnerCreateTransactionActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="@string/daftar_tempat_laundry"
+            android:text="@string/buat_transaksi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
@@ -24,8 +24,8 @@
             android:layout_marginBottom="16dp"/>
 
         <EditText
-            android:id="@+id/laundromat_name"
-            android:hint="@string/edit_text_nama"
+            android:id="@+id/create_transaction_weight"
+            android:hint="@string/berat"
             android:fontFamily="@font/poppins"
             android:paddingHorizontal="16dp"
             android:layout_width="match_parent"
@@ -33,45 +33,34 @@
             android:background="@drawable/edit_text_background"
             android:textCursorDrawable="@null"
             android:maxLines="1"
-            android:inputType="text"
+            android:inputType="number"
             android:textColorHighlight="@color/colorPrimary"/>
 
         <EditText
-            android:id="@+id/laundromat_address"
-            android:hint="@string/edit_text_alamat"
-            android:layout_marginTop="16dp"
+            android:id="@+id/create_transaction_price"
+            android:hint="@string/harga"
             android:fontFamily="@font/poppins"
             android:paddingHorizontal="16dp"
+            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/edit_text_background"
             android:textCursorDrawable="@null"
             android:maxLines="1"
-            android:inputType="textEmailAddress"
+            android:inputType="number"
             android:textColorHighlight="@color/colorPrimary"/>
 
         <Button
-            android:id="@+id/laundromat_pick_location"
-            android:background="@drawable/button_success"
-            android:textColor="@color/colorWhite"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins"
-            android:layout_width="match_parent"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
-            android:text="@string/pilih_lokasi"
-            android:stateListAnimator="@null"/>
-
-        <Button
-            android:id="@+id/laundromat_register_button"
+            android:id="@+id/create_transaction_button"
             android:background="@drawable/button_primary"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="16dp"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
-            android:text="@string/simpan"
+            android:text="@string/buat_transaksi"
             android:stateListAnimator="@null"/>
 
     </LinearLayout>

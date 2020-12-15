@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2"
+    tools:context=".UserTransactionDetailActivity">
+
+    <fragment
+        android:id="@+id/transaction_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserTransactionDetailActivity"
+        android:layout_weight="1"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="@string/transaction_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/user_detail_code"
+                    android:text="@string/transaction_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/user_detail_status"
+                    android:text="@string/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingHorizontal="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/tanggal_mulai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/user_detail_start_date"
+                    android:text="@string/tanggal_mulai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/tanggal_selesai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/user_detail_end_date"
+                    android:text="@string/tanggal_selesai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/user_detail_price"
+                    android:text="@string/harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/user_detail_weight"
+                    android:text="@string/berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

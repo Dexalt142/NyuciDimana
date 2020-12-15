@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OwnerTransactionDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_container">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/owner_detail_qr"
+                        android:layout_weight="2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitStart"
+                        android:adjustViewBounds="true"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:text="@string/transaction_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_code"
+                    android:text="@string/transaction_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_status"
+                    android:text="@string/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingHorizontal="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/tanggal_mulai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_start_date"
+                    android:text="@string/tanggal_mulai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/tanggal_selesai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_end_date"
+                    android:text="@string/tanggal_selesai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_price"
+                    android:text="@string/harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_weight"
+                    android:text="@string/berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/owner_detail_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="@string/nama_pelanggan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_username"
+                    android:text="@string/nama_pelanggan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:text="@string/telp_pelanggan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"/>
+
+                <TextView
+                    android:id="@+id/owner_detail_phone"
+                    android:text="@string/telp_pelanggan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textFontWeight="700"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/transaction_action"
+            android:text="@string/proses"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
